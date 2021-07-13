@@ -55,6 +55,7 @@ module.exports = {
     // alias.
     //
     config.resolve.alias
+      .set("bpui.js", resolve("src/bpui"))
       .set("assets", resolve("src/assets"))
       .set("@", resolve("./src"))
       .set("ext", resolve("./ext"));

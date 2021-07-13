@@ -1,0 +1,77 @@
+
+// 不支持圆角
+// -color 使用图片边框的颜色, 会渐变.
+@mixin bp-thinBorderBottom($color) {
+  border-bottom: 1px solid $color;
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    border-bottom: none;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: linear-gradient(0deg, $color 49%, transparent 51%, transparent);
+  }
+}
+
+@mixin bp-thinBorderTop($color) {
+  border-top: 1px solid $color;
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    border-top: none;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image: linear-gradient(180deg, $color 50%, transparent 50%, transparent);
+  }
+}
+
+@mixin bp-thinBorderLeft($color) {
+  border-left: 1px solid $color;
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    border-left: none;
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-image: linear-gradient(90deg, $color 50%, transparent 50%, transparent);
+  }
+}
+
+@mixin bp-thinBorderRight($color) {
+  border-right: 1px solid $color;
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    border-right: none;
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-image: linear-gradient(270deg, $color 49%, transparent 51%, transparent);
+  }
+}
+
+
+@mixin bp-thinBorderTopLeft($color) {
+  border-top: 1px solid $color;
+  border-left: 1px solid $color;
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    border-top: none;
+    border-left: none;
+    background-size: 100% 1px, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: top, left;
+    background-image: linear-gradient(180deg, $color 50%, transparent 50%, transparent), linear-gradient(90deg, $color 50%, transparent 50%, transparent);
+  }
+}
+
+@mixin bp-thinBorder($color) {
+  border-top: 1px solid $color;
+  border-left: 1px solid $color;
+  border-bottom: 1px solid $color;
+  border-right: 1px solid $color;
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: top, left, bottom, right;
+    background-image: linear-gradient(180deg, $color 50%, transparent 50%, transparent), linear-gradient(90deg, $color 50%, transparent 50%, transparent), linear-gradient(0deg, $color 49%, transparent 51%, transparent), linear-gradient(270deg, $color 49%, transparent 51%, transparent);
+  }
+}

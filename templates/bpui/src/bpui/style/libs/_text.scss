@@ -1,0 +1,35 @@
+
+/**
+ * @desc: 单行缩略.
+ */
+@mixin bp-ellipsis() {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/**
+ * @desc: 多行缩略.
+ * @param lines: 指定最多的行数.
+ */
+@mixin bp-ellipsisMultiline($lines) {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-all;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+/**
+ * @desc: 平滑字体.
+ */
+@mixin bp-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}

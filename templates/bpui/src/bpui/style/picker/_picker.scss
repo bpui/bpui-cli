@@ -1,0 +1,246 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-28 17:01
+* Desc: 
+*/
+
+/* don't change */
+$bpPickerIndicatorHeight: 40px;
+
+.bp-widget.bp-picker {
+
+  $bpPickerAnimateDurtion: 0.3s;
+
+  overflow-x: hidden;
+
+  &.bp-widget__visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    -webkit-transition: opacity $bpPickerAnimateDurtion 0s, visibility 0s 0s, background-color $bpPickerAnimateDurtion 0s;
+    -moz-transition: opacity $bpPickerAnimateDurtion 0s, visibility 0s 0s, background-color $bpPickerAnimateDurtion 0s;
+    transition: opacity $bpPickerAnimateDurtion 0s, visibility 0s 0s, background-color $bpPickerAnimateDurtion 0s; 
+ 
+    .bp-widget__contentWrap {
+      bottom: 0px;
+    }
+  }
+
+  &.bp-widget__invisible {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    -webkit-transition: opacity $bpPickerAnimateDurtion 0s, visibility $bpPickerAnimateDurtion 0s, background-color $bpPickerAnimateDurtion 0s;
+    -moz-transition: opacity $bpPickerAnimateDurtion 0s, visibility $bpPickerAnimateDurtion 0s, background-color $bpPickerAnimateDurtion 0s;
+    transition: opacity $bpPickerAnimateDurtion 0s, visibility $bpPickerAnimateDurtion 0s, background-color $bpPickerAnimateDurtion 0s;
+    
+    .bp-widget__contentWrap {
+      bottom: -300px;
+    }
+  }
+
+  .bp-widget__content {
+    position: relative !important;
+    display: flex !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+
+    /* ie polyfill */
+    height: 100vh !important;
+    width: 100vw !important;
+
+    box-sizing: border-box !important;
+
+    /* safari polyfill */
+    @include bp-isPhone {
+      position: fixed !important;
+      height: inherit !important;
+      touch-action: none !important;
+    }
+  }
+
+  .bp-widget__contentWrap {
+    padding-bottom: constant(safe-area-inset-bottom) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+
+    -webkit-transition-property: bottom;
+    -moz-transition-property: bottom;
+    transition-property: bottom;
+    -webkit-transition-duration: $bpPickerAnimateDurtion;
+    -moz-transition-duration: $bpPickerAnimateDurtion;
+    transition-duration: $bpPickerAnimateDurtion;
+
+    user-select: none;
+
+    box-shadow: 0px 0px 2px 1px rgba(165, 165, 165, 0.17);
+    min-width: 200px;
+    max-height: 83vh;
+    position: absolute;
+    width: 100% !important;
+
+    @include bp-isPhone {
+      max-width: 100vw;
+    }
+    @include bp-isTablet {
+      max-width: 500px;
+    }
+
+    bottom: 0;
+    // left: calc(100vw - 100%);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    font-size: $bpPickerFontSize;
+    border-radius: $bpPickerRadius;
+    background-color: $bpPickerBgColor;
+    color: $bpPickerTextColor;
+  }
+
+  .bp-picker__toolbar {
+    @include bp-thinBorderBottom($bpPickerBorderColor);
+    user-select: none;
+    min-height: 45px;
+    font-size: $bpPickerToolbarFontSize;
+    font-weight: $bpPickerToolbarFontWeight;
+    padding: 9px 15px;
+    box-sizing: border-box;
+    color: $bpPickerToolbarColor;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bp-picker__cancelBtn {
+      color: rgb(136, 136, 136);
+    }
+  }
+
+  /* picker主内容 */
+  .bp-picker__main {
+    display: -webkit-box;
+    display: flex;
+    position: relative;
+    height: $bpPickerIndicatorHeight * 7;
+    overflow: hidden;
+
+    .bp-picker__group {
+      -webkit-box-flex: 1;
+      flex: 1;
+      position: relative;
+      height: 100%;
+
+      .bp-picker__mask {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        top: 0;
+        height: 100%;
+        margin: 0 auto;
+        background: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,.95)),to(hsla(0,0%,100%,.6))),-webkit-gradient(linear,left bottom,left top,from(hsla(0,0%,100%,.95)),to(hsla(0,0%,100%,.6)));
+        background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+        background-position-x: center, center;
+        background-position-y: top, bottom;
+        background-size: 100% $bpPickerIndicatorHeight * 3;
+        background-repeat-x: no-repeat;
+        background-repeat-y: no-repeat;
+        background-attachment: initial, initial;
+        background-origin: initial, initial;
+        background-clip: initial, initial;
+        background-color: initial;
+        background: linear-gradient(180deg,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6)),linear-gradient(0deg,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6));
+        background-position: top,bottom;
+        background-size: 100% $bpPickerIndicatorHeight * 3;
+        background-repeat: no-repeat;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+
+      .bp-picker__indicator {
+        touch-action: none!important;
+        pointer-events: none!important;
+        height: $bpPickerIndicatorHeight;  /* don't change */
+        top: $bpPickerIndicatorHeight * 3;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+
+        &:before, &:after {
+          content: " ";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 1px;
+          color: #e5e5e5;
+          box-sizing: border-box;
+          margin: 0;
+        }
+
+        &:before {
+          top: 0;
+          border-top: 1px solid #e5e5e5;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          -webkit-transform: scaleY(.5);
+          transform: scaleY(.5);
+        }
+
+        &:after {
+          bottom: 0;
+          border-bottom: 1px solid #e5e5e5;
+          -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+          -webkit-transform: scaleY(.5);
+          transform: scaleY(.5);
+        }
+      }
+
+      .bp-picker__content {
+        touch-action: none!important;
+        pointer-events: none!important;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        box-sizing: border-box;
+        margin: 0;
+
+        &:before, &:after {
+          box-sizing: border-box;
+          margin: 0;
+        }
+
+        .bp-picker__item {
+          padding: 0;
+          height: $bpPickerIndicatorHeight;
+          line-height: $bpPickerIndicatorHeight;
+          text-align: center;
+          color: #000;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+.bp-widget.bp-picker.bp-picker__tablet {
+  .bp-widget__contentWrap {
+    justify-self: center;
+    align-self: center;
+    bottom: auto;
+    top: auto;
+    overflow: hidden;
+  }
+}

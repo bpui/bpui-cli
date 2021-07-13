@@ -1,0 +1,149 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-28 17:01
+* Desc: 
+*/
+
+.bp-toast-wrap {
+  z-index: 3002;
+  user-select: none;
+  height: 0px !important;
+  pointer-events: none;
+  touch-action: none;
+  position: fixed !important;
+  top: 0 !important;
+  overflow: visible !important;
+}
+
+.bp-widget.bp-toast {
+  display: flex !important;
+  position: static !important;
+  flex-direction: column !important;
+  align-items: center;
+  top: initial !important;
+  bottom: initial !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: initial !important;
+  overflow: visible !important;
+
+  &.bp-widget__visible {
+    margin-top: 0px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    -webkit-transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s, margin-top $bpDialogAnimateDurtion 0s;
+    -moz-transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s, margin-top $bpDialogAnimateDurtion 0s;
+    transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s, margin-top $bpDialogAnimateDurtion 0s;
+  }
+
+  &.bp-widget__invisible {
+    margin-top: -40px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    -webkit-transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s, margin-top $bpDialogAnimateDurtion 0s;
+    -moz-transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s, margin-top $bpDialogAnimateDurtion 0s;
+    transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s, margin-top $bpDialogAnimateDurtion 0s;
+  }
+
+  .bp-widget__content {
+
+    margin: 5px auto 0px auto;
+    width: auto;
+    position: static;
+    // height: auto;
+    // min-height: 40px;
+    max-width: 80vw;
+    min-width: 100px;
+
+    // display: flex;
+    display: block;
+
+    & > div {
+      padding: 5px 10px 5px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      
+      box-shadow: 0px 0px 2px 1px rgba(165, 165, 165, 0.17);
+      position: relative;
+      text-align: center;
+
+      font-size: $bpDialogFontSize;
+      border-radius: $bpLoadingRadius;
+      background-color: $bpLoadingBgColor;
+      color: $bpLoadingTextColor;
+
+      .bp-icon {
+        color: $bpLoadingTextColor;
+        i, i:before {
+          color: $bpLoadingTextColor;
+        }
+      }
+    }
+  }
+
+  .bp-toast__main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 5px 2px 0px;
+  }
+  
+  .bp-toast__text {
+    padding: 5px 0px;
+    word-break: break-all;
+  }
+}
+
+
+.bp-widget.bp-toast__center {
+  user-select: none;
+  display: flex !important;
+  position: fixed !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+  pointer-events: none;
+  touch-action: none;
+  align-items: center;
+  // height: 100vh !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: auto !important;
+  justify-content: center;
+
+  .bp-widget__content {
+    margin: 0px auto 0px auto;
+
+    & > div {
+      min-height: 100px;
+      min-width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: auto;
+      padding: 10px;
+
+      .bp-toast__main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px 10px 20px;
+      }
+
+      .bp-toast__text {
+        padding: 0px;
+
+        &:first-child {
+          line-height: 80px; /* fix ie 10 */
+        }
+      }
+    }
+  }
+}

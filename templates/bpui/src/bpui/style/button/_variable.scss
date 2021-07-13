@@ -1,0 +1,24 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-13 15:45
+* Desc: 
+*/
+
+/* 字体 */
+$bpButtonFontSize: 1rem !default;
+$bpButtonFontWeight: 400 !default;
+$bpButtonBorderRadius: .25rem !default;
+
+/* 颜色 */
+$bpButtonTextColor: (
+  /* .bp-btnPrimary */
+  Primary: $bpColorPrimary,
+  /* .bp-btnWarning */
+  Warning: $bpColorWarn,
+  /* custom */
+
+) !default;
+
+/* 背景颜色 */
+$bpButtonBgColor: $bpBgColor !default;

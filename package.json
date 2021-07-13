@@ -1,0 +1,64 @@
+{
+  "description": "cli of bpui",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "colors": "^1.1.2",
+    "febs": "^1.0.12",
+    "readline-sync": "^1.4.10",
+    "term-list": "^0.2.1"
+  },
+  "devDependencies": {},
+  "directories": {},
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://github.com/bpui/bpui-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bpui/bpui-cli.git"
+  },
+  "keywords": [
+    "java",
+    "spring",
+    "springboot",
+    "annotation",
+    "validation",
+    "controller",
+    "service",
+    "feign",
+    "feignClient",
+    "PathVariable",
+    "RequestBody",
+    "RequestMapping",
+    "postmapping",
+    "getmapping",
+    "RequestParam",
+    "restcontroller",
+    "request",
+    "service",
+    "autowired"
+  ],
+  "files": [
+    "_scripts",
+    "bin",
+    "dist",
+    "templates",
+    "postinstall.js"
+  ],
+  "bin": {
+    "bpui": "./bin/index.js"
+  },
+  "license": "MIT",
+  "main": "./bin/index.js",
+  "maintainers": [
+    {
+      "name": "brainpoint",
+      "email": "bpoint.lee@gmail.com"
+    }
+  ],
+  "scripts": {
+    "postinstall": "node ./postinstall"
+  },
+  "name": "bpui-cli",
+  "version": "0.0.1"
+}

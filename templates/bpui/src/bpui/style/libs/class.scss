@@ -1,0 +1,68 @@
+
+@import "./variable";
+@import './text';
+@import "../icons";
+
+html {
+  @include bp-smoothing();
+  font-family: $bpFont;
+  font-size: $bpFontSize;
+}
+
+* {
+  touch-action: manipulation;
+  /* no 300ms delay */
+}
+
+[class|=bp],
+button,
+label {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  // -webkit-transform-style: preserve-3d;
+  // transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-touch-callout: none;
+  // -webkit-user-select: none;
+  // -khtml-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
+}
+
+.bp-ellipsis {
+  @include bp-ellipsis();
+}
+.bp-ellipsisMultiline1 {
+  @extend .bp-ellipsis;
+}
+.bp-ellipsisMultiline2 {
+  @include bp-ellipsisMultiline(2);
+}
+.bp-ellipsisMultiline3 {
+  @include bp-ellipsisMultiline(3);
+}
+.bp-ellipsisMultiline4 {
+  @include bp-ellipsisMultiline(4);
+}
+.bp-ellipsisMultiline5 {
+  @include bp-ellipsisMultiline(5);
+}
+.bp-ellipsisMultiline6 {
+  @include bp-ellipsisMultiline(6);
+}
+.bp-ellipsisMultiline7 {
+  @include bp-ellipsisMultiline(7);
+}
+.bp-ellipsisMultiline8 {
+  @include bp-ellipsisMultiline(8);
+}
+
+.bp-smoothing {
+  @include bp-smoothing();
+}
+

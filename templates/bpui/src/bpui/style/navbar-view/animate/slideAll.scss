@@ -1,0 +1,57 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2018-06-13 15:04
+* Desc: 页面切换过渡动画相关.
+*/
+
+
+$bpNavbarSlideAllDurtion: 0.3s !default;
+
+/**
+ * slideAll 带100%偏移
+ */
+ .slideAll-enter {
+   transform: translateX(100vw);
+ }
+ .slideAll-enter-active {
+   transition: transform $bpNavbarSlideAllDurtion ease;
+   z-index: 99999;
+ }
+ .slideAll-enter-to {
+   transform: translateX(0vw);
+ }
+ .slideAll-leave {
+   transform: translateX(0vw);
+ }
+ .slideAll-leave-active {
+   transition: transform $bpNavbarSlideAllDurtion ease;
+ }
+ .slideAll-leave-to {
+   transform: translateX(-50vw);
+ }
+ 
+ /**
+  * slideAllOut 100%偏移
+  */
+ .slideAllOut-enter {
+   transform: translateX(-50vw);
+ }
+ .slideAllOut-enter-active {
+   transition: transform $bpNavbarSlideAllDurtion ease;
+ }
+ .slideAllOut-enter-to {
+   transform: translateX(0vw);
+ }
+ .slideAllOut-leave {
+   transform: translateX(0vw);
+ }
+ .slideAllOut-leave-active {
+   transition: transform $bpNavbarSlideAllDurtion ease;
+   z-index: 99999;
+ }
+ .slideAllOut-leave-to {
+   transform: translateX(100vw);
+ }
+
+ 

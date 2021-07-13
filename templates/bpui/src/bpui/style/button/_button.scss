@@ -1,0 +1,113 @@
+
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-24 11:03
+* Desc: 
+*/
+
+button,
+.bp-btn {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  font-size: $bpButtonFontSize;
+  font-weight: $bpButtonFontWeight;
+  padding: .38rem .48rem;
+  margin: 2px;
+  line-height: 1.25em;
+  border-radius: $bpButtonBorderRadius;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-transform: none;
+  overflow: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+  outline-offset: 0;
+  text-decoration: none;
+  color: map-get($bpButtonTextColor, Primary);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+
+  svg, .bp-icon {
+    vertical-align: middle;
+    &:first-child {
+      margin-right: .24rem;
+    }
+    &:last-child {
+      margin-left: .24rem;
+    }
+  }
+
+  &:hover {
+    color: rgba(map-get($bpButtonTextColor, Primary), .7);
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    touch-action: none;
+    pointer-events: none;
+  }
+
+  &.bp-btnBorder {
+    background-color: $bpButtonBgColor;
+    border: solid 1px rgba(map-get($bpButtonTextColor, Primary), 0.7);
+    &:hover {
+      color: $bpButtonBgColor;
+      background-color: rgba(map-get($bpButtonTextColor, Primary), .9);
+      border: solid 1px rgba(map-get($bpButtonTextColor, Primary), .6);
+    }
+  }
+}
+
+
+@each $name, $color in $bpButtonTextColor {
+  .bp-btn#{$name} {
+    color: $color;
+
+    &:hover {
+      color: rgba($color, .7);
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    &:active {
+      opacity: 0.4;
+    }
+
+    &.bp-btnBorder {
+      background-color: $bpButtonBgColor;
+      border: solid 1px rgba($color, 0.7);
+      &:hover {
+        color: $bpButtonBgColor;
+        background-color: rgba($color, .9);
+        border: solid 1px rgba($color, .6);
+      }
+    }
+  }
+}

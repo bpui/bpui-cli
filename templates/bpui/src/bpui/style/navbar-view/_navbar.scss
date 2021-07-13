@@ -1,0 +1,171 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-13 15:45
+* Desc: 
+*/
+
+.bp-navbarView {
+  /* 导航条 */
+  .bp-navbarView_bar {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    // position: absolute;
+    position: fixed;
+    justify-content: space-between;
+
+    z-index: 1000;
+    width: 100%;
+    height: $bpNavbarHeight;
+    background-color: $bpNavbarBgColor;
+    opacity: $bpNavbarBgOpacity;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    touch-action: initial;
+    pointer-events: initial;
+
+    /* 包含状态栏 */
+    &.bp-navbarView_containStatusBar {
+      height: $bpNavbarHeight+$bpNavbarStatusBarHeight;
+      .bp-navbarView_leftItem, .bp-navbarView_rightItem, .bp-navbarView_centerItem {
+        margin-top: $bpNavbarStatusBarHeight;
+      }
+    }
+
+    // border
+    @include bp-thinBorderBottom($bpNarbarBorderColor);
+
+    button {
+      @include bp-smoothing();
+
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+      transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      white-space: nowrap;
+      word-wrap: break-word;
+      font-weight: 400;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      outline: 0;
+      outline-offset: 0;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        vertical-align: middle;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+
+    .bp-navbarView_leftItem, .bp-navbarView_rightItem {
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+      padding: 0;
+      border: none;
+      width: 27.5vw;
+      max-width: 200px;
+      background: transparent;
+      margin: 0;
+      
+      &:focus {
+        outline: none;
+      }
+
+      $bpNavbarIconWidth: (25/17)*$bpNavbarFontSize;
+
+      span {
+        font-size: (17/17)*$bpNavbarFontSize;
+        font-weight: 400;
+        line-height: $bpNavbarHeight;
+        display: block;
+        color: $bpNarbarTextColor;
+      }
+  
+
+      .bp-navbarView_icon, svg {
+        width: $bpNavbarIconWidth;
+        height: $bpNavbarIconWidth;
+        margin-top: ($bpNavbarHeight - $bpNavbarIconWidth) / 2;
+        display: block;
+        color: $bpNarbarTextColor;
+      }
+      .bp-navbarView_icon:before {
+        width: $bpNavbarIconWidth;
+        height: $bpNavbarIconWidth;
+        font-size: $bpNavbarIconWidth;
+      }
+    }
+
+    /* 左侧按钮 */
+    .bp-navbarView_leftItem {
+      text-align: left;
+      padding-left: 8px;
+
+      .bp-navbarView_icon, svg {
+        margin-right: 4px;
+        float: left;
+      }
+      span {
+        float: left;
+      }
+    }
+    /* 右侧按钮 */
+    .bp-navbarView_rightItem {
+      padding-right: 8px;
+      text-align: right;
+
+      .bp-navbarView_icon, svg {
+        margin-left: 4px;
+        float: right;
+      }
+      span {
+        float: right;
+      }
+    }
+    /* 中部 */
+    .bp-navbarView_centerItem {
+      font-size: (20/17)*$bpNavbarFontSize;
+      font-weight: 400;
+      line-height: $bpNavbarHeight;
+      text-align: center;
+      width: 44vw;
+      background: transparent;
+      color: $bpNarbarTitleColor;
+    }
+    /* 自定义 */
+    .bp-navbarView_customItem {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+}

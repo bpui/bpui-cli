@@ -1,0 +1,9 @@
+
+@import './fade.scss';
+@import './lift.scss';
+@import './slide.scss';
+@import './slideAll.scss';
+
+.bp-navbar_animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
+}

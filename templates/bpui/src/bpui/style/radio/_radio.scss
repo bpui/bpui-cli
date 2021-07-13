@@ -1,0 +1,106 @@
+
+.bp-radio {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    outline-offset: 0;
+    
+    color: $bpRadioLabelColor;
+    font-weight: $bpRadioFontWeight;
+    font-size: $bpRadioFontSize;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    user-select: none;
+    margin: 2px;
+
+    .bp-radio__label {
+        height: $bpRadioSize;
+        display: inline-block;
+        padding-left: 5px;
+        line-height: 1;
+        vertical-align: middle;
+    }
+
+    .bp-radio__input {
+        white-space: nowrap;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        vertical-align: middle;
+
+        .bp-radio__inner {
+            display: inline-block;
+            position: relative;
+            border: 1px solid #dcdfe6;
+            border-radius: $bpRadioRadius;
+            box-sizing: border-box;
+            width: $bpRadioSize;
+            height: $bpRadioSize;
+            background-color: $bpRadioTickColor;
+            z-index: 1;
+            transition: border-color .5s cubic-bezier(.71, -.46, .29, 1.46), background-color .25s cubic-bezier(.71, -.46, .29);
+
+            &:after {
+                width: $bpRadioInnerSize;
+                height: $bpRadioInnerSize;
+                border-radius: 100%;
+                background-color: $bpRadioTickColor;
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: transform .15s ease-in;
+            }
+        }
+
+        .bp-radio__inner_hover {
+            border-color: $bpRadioBgColor;
+        }
+
+        .bp-radio__original {
+            opacity: 0;
+            outline: none;
+            position: absolute;
+            margin: 0;
+            width: 0;
+            height: 0;
+            z-index: -1;
+        }
+    }
+
+    .bp-radio__checked {
+        .bp-radio__inner {
+            border-color: $bpRadioBgColor;
+            background-color: $bpRadioBgColor;
+            position: relative;
+
+            &:after {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+
+    // disabled
+    &.bp-radio__disabled {
+        opacity: .5;
+        cursor: not-allowed;
+        touch-action: none;
+        pointer-events: none;
+    }
+}

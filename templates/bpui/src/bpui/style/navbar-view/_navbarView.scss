@@ -1,0 +1,73 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-13 15:45
+* Desc: 
+*/
+
+body {
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-right: 0;
+  margin: 0 !important;
+  height: auto !important;
+}
+
+.bp-navbarView {
+  // -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  // -webkit-overflow-scrolling: touch;
+  backface-visibility: hidden;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .bp-navbarView_page {
+    // -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    box-shadow: -3px -3px 20px 2px rgba(0, 0, 0, 0.15);
+    touch-action: initial;
+    pointer-events: initial;
+    // overflow-x: hidden;
+    // overflow-y: visible;
+    box-sizing: border-box;
+    background-color: $bpNavbarPageBgColor;
+
+    &>div {
+      padding-top: $bpNavbarHeight;
+      width: 100%;
+      max-width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box !important;
+    }
+  }
+
+  .bp-navbarView_static {
+    // position: static !important;
+  }
+
+  .bp-navbarView_absolute {
+    position: absolute !important;
+  }
+
+  /* 包含状态栏 */
+  &.bp-navbarView_containStatusBar {
+    .bp-navbarView_page>div {
+      padding-top: $bpNavbarHeight+$bpNavbarStatusBarHeight;
+    }
+  }
+}
+
+
+.bp-navbarView_loading {
+  -webkit-animation: bp-iconLoading_animationSpinKeyframes 1.6s infinite linear;
+  -moz-animation: bp-iconLoading_animationSpinKeyframes 1.6s infinite linear;
+  animation: bp-iconLoading_animationSpinKeyframes 1.6s infinite linear;
+}

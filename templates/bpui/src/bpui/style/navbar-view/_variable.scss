@@ -1,0 +1,28 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-13 15:45
+* Desc: 
+*/
+
+
+/* 状态栏默认高度 */
+$bpNavbarStatusBarHeight: 20px !default;
+/* 导航条默认高度 */
+$bpNavbarHeight: 44px !default;
+/* 导航条的参照字体大小 */
+$bpNavbarFontSize: 17px !default;
+/* 导航条背景色 */
+$bpNavbarBgColor: rgb(247, 247, 250) !default;
+/* 导航条透明度 */
+$bpNavbarBgOpacity: 0.9 !default;
+/* 左右两侧文本颜色 */
+$bpNarbarTextColor: $bpColorPrimary !default;
+/* 标题文本颜色 */
+$bpNarbarTitleColor: #111 !default;
+/* 边框颜色 */
+$bpNarbarBorderColor: $bpBorderColor !default;
+/* 页面背景色 */
+$bpNavbarPageBgColor: rgb(255, 255, 255) !default;
+
+

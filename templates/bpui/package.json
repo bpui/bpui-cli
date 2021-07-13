@@ -1,0 +1,35 @@
+{
+  "name": "${projectName}",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build-router": "bpui-build router",
+    "build:analyzer": "bpui-build router && BPUI_ANALYZER=1 vue-cli-service build",
+    "build": "bpui-build router && vue-cli-service build",
+    "build:dev": "bpui-build router && vue-cli-service build --mode development",
+    "dev": "bpui-build router && vue-cli-service serve"
+  },
+  "dependencies": {
+    "bpui.js": "^0.2.24",
+    "core-js": "^3.6.4",
+    "febs-browser": "^1.2.9",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.2",
+    "vue-property-decorator": "^8.4.0",
+    "vuex": "^3.1.2",
+    "vuex-class": "^0.3.2"
+  },
+  "devDependencies": {
+    "@bpui/build-cli": "^0.0.6",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-pwa": "~4.4.0",
+    "@vue/cli-plugin-typescript": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "webpack-bundle-analyzer": "^4.4.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "IE 10"
+  ]
+}

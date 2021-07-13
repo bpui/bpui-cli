@@ -1,0 +1,103 @@
+
+.bp-switch {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    outline-offset: 0;
+    
+    color: $bpSwitchLabelColor;
+    font-weight: $bpSwitchFontWeight;
+    font-size: $bpSwitchFontSize;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    user-select: none;
+    margin: 2px;
+
+    .bp-switch__label {
+        height: $bpSwitchSize;
+        display: inline-block;
+        padding-left: 5px;
+        line-height: $bpSwitchSize;
+    }
+
+    .bp-switch__input {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        line-height: $bpSwitchSize;
+        height: $bpSwitchSize;
+        vertical-align: middle;
+
+        .bp-switch__inner {
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            width: $bpSwitchSize / 32 * 50;
+            height: $bpSwitchSize;
+            outline: none;
+            border-radius: $bpSwitchSize / 2;
+            box-sizing: border-box;
+            background: $bpSwitchBgOffColor;
+            cursor: pointer;
+            transition: border 0.2s, box-shadow 0.4s;
+            vertical-align: middle;
+            box-shadow: inset 0 0 0 1.5px darken($bpSwitchBgOffColor, 8%);
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 2px;
+                left: 1px;
+                border-radius: 50%;
+                transition: all .2s;
+                width: $bpSwitchSize - 4px;
+                height: $bpSwitchSize - 4px;
+                background-color: $bpSwitchTickColor;
+                box-shadow: 0 1px 2px rgba(0,0,0,.4);
+            }
+        }
+
+        .bp-switch__inner_checked {
+            border-color: $bpSwitchBgOnColor;
+            background-color: $bpSwitchBgOnColor;
+            box-shadow: $bpSwitchBgOnColor 0px 0px 0px 16px inset;
+            transition: box-shadow 0.1s, background-color 1.2s;
+
+            &:after {
+                left: 100%;
+                margin-left: - $bpSwitchSize + 2px;
+            }
+
+        }
+
+        .bp-switch__original {
+            opacity: 0;
+            outline: none;
+            position: absolute;
+            margin: 0;
+            width: 0;
+            height: 0;
+            z-index: -1;
+        }
+    }
+
+    // disabled
+    &.bp-switch__disabled {
+        opacity: .5;
+        cursor: not-allowed;
+        touch-action: none;
+        pointer-events: none;
+    }
+}

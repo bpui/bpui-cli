@@ -1,0 +1,48 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2018-06-13 15:04
+* Desc: 设备自适应.
+*/
+
+/*
+iphone4  320~480
+iphone5  320~568
+iphone6  375~667
+
+iphone6p 414~736
+iphonex  375~812
+
+ipad      768~1024
+ipad pro  1024~1366
+*/
+
+
+/* is phone */
+@mixin bp-isPhone {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+/* is tablet */
+@mixin bp-isTablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+/* Landscape */
+@mixin bp-isLandscape {
+  @media screen and (orientation:landscape) {
+    @content;
+  }
+}
+/* Portrait */
+@mixin bp-isPortrait {
+  @media screen and (orientation:portrait) {
+    @content;
+  }
+}
+
+

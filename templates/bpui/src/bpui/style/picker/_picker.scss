@@ -153,6 +153,7 @@ $bpPickerIndicatorHeight: 40px;
         background-repeat-y: no-repeat;
         background-attachment: initial, initial;
         background-origin: initial, initial;
+        -webkit-background-clip: initial, initial;
         background-clip: initial, initial;
         background-color: initial;
         background: linear-gradient(180deg,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6)),linear-gradient(0deg,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6));

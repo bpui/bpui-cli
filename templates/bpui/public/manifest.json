@@ -1,6 +1,6 @@
 {
-  "name": "bpui",
-  "short_name": "bpui",
+  "name": "${projectName}",
+  "short_name": "${projectName}",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

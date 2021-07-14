@@ -19,7 +19,7 @@ module.exports = {
   outputDir: "_dist",
   publicPath: "/",
   filenameHashing: true,
-  productionSourceMap: process.env.NODE_ENV === 'development',
+  productionSourceMap: process.env.NODE_ENV == 'development',
   devServer: {
     host: config.Host,
     port: config.Port,
@@ -46,6 +46,10 @@ module.exports = {
   ],
   // configureWebpack: {},
   chainWebpack: config => {
+
+    if (process.env.NODE_ENV == 'development') {
+      config.devtool('#cheap-module-eval-source-map');
+    }
 
     webpackConfig.initResolveAlias(config);
     webpackConfig.initBundleAnalyzer(config);

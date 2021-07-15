@@ -18,7 +18,7 @@ bpui
   .registerComponents(Vue)
   // set layouts.
   .then(() => {
-    (bpui.setNavbarDefaultCfg as any)({
+    bpui.setNavbarDefaultCfg({
       allLayouts: [
         '/',
         'layout2'

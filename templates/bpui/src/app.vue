@@ -24,20 +24,8 @@ export default class extends Vue {
 
   @Watch('$route')
   onRouteChange(newRoute: bp.Location, oldRoute?: bp.Location) {
-    let newRoutePath = newRoute.path;
-    if (newRoutePath[0] == '/') newRoutePath = newRoutePath.substring(1);
-    for (let p in layouts) {
-      if (p[0] == '/') p = p.substring(1);
-      if (newRoutePath == p || newRoutePath.indexOf(p + '/') >= 0) {
-        this.layout = (layouts as any)[p];
-        return;
-      }
-    }
-
-    // 默认值.
-    this.layout = (layouts as any)['default'];
+    this.layout = bpui.getLayout(layouts, newRoute, oldRoute);
   }
-
 
   mounted() {
     this.onRouteChange(this.$route);

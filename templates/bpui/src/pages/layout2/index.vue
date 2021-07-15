@@ -37,8 +37,7 @@
       super();
     }
 
-    mounted() {
-    }
+    mounted() {}
   }
 </script>
 

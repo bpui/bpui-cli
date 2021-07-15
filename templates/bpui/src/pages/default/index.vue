@@ -1,6 +1,10 @@
 <template>
   <div>
     hello world!
+
+    <p @click="onClick">
+      to layout2
+    </p>
   </div>
 </template>
 
@@ -72,6 +76,10 @@
 
     viewDisappear() {
       console.log('viewDisappear: index');
+    }
+
+    onClick() {
+      this.$router.push('/layout2');
     }
   }
 

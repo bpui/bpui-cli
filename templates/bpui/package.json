@@ -1,5 +1,5 @@
 {
-  "name": "${projectName}",
+  "name": "app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,7 +16,7 @@
     "@bpui/dialog": "^0.1.35",
     "@bpui/input": "^0.1.23",
     "@bpui/libs": "^0.2.22",
-    "@bpui/navbar-view": "^0.1.24",
+    "@bpui/navbar-view": "^0.1.25",
     "@bpui/picker": "^0.1.37",
     "@bpui/popover": "^0.1.16",
     "@bpui/radio": "^0.1.16",
@@ -24,6 +24,7 @@
     "bpui.js": "^1.0.0",
     "core-js": "^3.6.4",
     "febs-browser": "^1.2.9",
+    "register-service-worker": "^1.7.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.2",
     "vue-property-decorator": "^8.4.0",
@@ -31,11 +32,26 @@
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
-    "@bpui/build-cli": "^0.0.6",
+    "@bpui/build-cli": "^0.0.7",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-plugin-pwa": "~4.4.0",
     "@vue/cli-plugin-typescript": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "tslib": "^2.3.0",
+    "vue-template-compiler": "^2.6.11",
     "webpack-bundle-analyzer": "^4.4.2"
   },
   "browserslist": [

@@ -12,6 +12,7 @@ $bpPopoverFontSize: 1.0rem !default;
 $bpPopoverRadius: 12px !default;
 
 /* 对话框颜色 */
-$bpPopoverBgColor: rgba(0, 0, 0, 0.6) !default;
+$bpPopoverBgColor: rgba(0, 0, 0, 0.9) !default;
 $bpPopoverBorderColor: $bpBorderColor !default;
-$bpPopoverTextColor: #eee !default;
+$bpPopoverTextColor: rgb(255, 255, 255) !default;
+$bpPopoverCellBorderColor: rgb(70, 70, 70) !default;

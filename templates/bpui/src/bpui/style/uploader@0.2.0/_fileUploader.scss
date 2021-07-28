@@ -1,0 +1,148 @@
+.bp-uploader {
+    width: $bpUploaderWidth;
+    height: $bpUploaderHeight;
+    box-sizing: border-box;
+    padding: 5px;
+    border: $bpUploaderBorder;
+    border-radius: $bpUploaderBorderRadius;
+    overflow: hidden;
+    font-size: $bpUploaderFontSize;
+
+    position: relative;
+    cursor: pointer;
+
+    &.bp-uploader__drag, &:hover {
+        border: $bpUploaderBorderDrag;
+    }
+
+    &.bp-uploader__disabled {
+        touch-action: none;
+        pointer-events: none;
+
+        .bp-uploader__file-content-main {
+            opacity: 0.5;
+        }
+    }
+
+    .bp-uploader__progress {
+        height: $bpUploaderProgressHeight;
+        width: 0%;
+        position: absolute;
+        background: $bpUploaderProgressColor;
+        transition: width 0.1s;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .bp-uploader__file-content-main {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        div:first-child, div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bp-uploader__cover {
+            max-width:95%;
+            max-height:95%;
+            cursor: pointer;
+
+            &.bp-uploader__cover__file {
+                width: 44px;
+                height: 44px;
+                background-image: url('~@bpui/uploader/icons/svg/default.svg');
+                background-size: 100% 100%;
+
+                &[data-type=_7z] {
+                    background-image: url('~@bpui/uploader/icons/svg/7z.svg');
+                }
+                &[data-type=csv] {
+                    background-image: url('~@bpui/uploader/icons/svg/csv.svg');
+                }
+                &[data-type=doc] {
+                    background-image: url('~@bpui/uploader/icons/svg/doc.svg');
+                }
+                &[data-type=mov] {
+                    background-image: url('~@bpui/uploader/icons/svg/mov.svg');
+                }
+                &[data-type=mp4] {
+                    background-image: url('~@bpui/uploader/icons/svg/mp4.svg');
+                }
+                &[data-type=pdf] {
+                    background-image: url('~@bpui/uploader/icons/svg/pdf.svg');
+                }
+                &[data-type=ppt] {
+                    background-image: url('~@bpui/uploader/icons/svg/ppt.svg');
+                }
+                &[data-type=psd] {
+                    background-image: url('~@bpui/uploader/icons/svg/psd.svg');
+                }
+                &[data-type=rar] {
+                    background-image: url('~@bpui/uploader/icons/svg/rar.svg');
+                }
+                &[data-type=svg] {
+                    background-image: url('~@bpui/uploader/icons/svg/svg.svg');
+                }
+                &[data-type=txt] {
+                    background-image: url('~@bpui/uploader/icons/svg/txt.svg');
+                }
+                &[data-type=xls] {
+                    background-image: url('~@bpui/uploader/icons/svg/xls.svg');
+                }
+                &[data-type=zip] {
+                    background-image: url('~@bpui/uploader/icons/svg/zip.svg');
+                }
+            }
+        }
+
+        .bp-uploader__cover__file__name {
+            margin-top: 10px;
+            text-align: center;
+            padding: 0 5px;
+        }
+
+        .bp-uploader__add-icon {
+            color: #999;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            touch-action: none;
+            flex-direction: column;
+
+            &:after {
+                margin-top: 15px;
+                content: $bpUploaderDragText;
+            }
+            &[data-action^=uploading]:after {
+                margin-top: 15px;
+                content: $bpUploaderCancelText;
+            }
+        }
+
+
+        .bp-uploader__uploading-icon-file {
+            display: none !important;
+        }
+    }
+
+    &:hover .bp-uploader__uploading-icon-file {
+        display: flex !important;
+    }
+
+    &:hover .bp-uploader__uploading-icon-filetype {
+        display: none !important;
+    }
+}

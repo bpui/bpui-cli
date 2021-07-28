@@ -16,13 +16,10 @@ Vue.config.productionTip = false;
 bpui
   // load dynamic components
   .registerComponents(Vue)
-  // set layouts.
+  // navbar cfg.
   .then(() => {
     bpui.setNavbarDefaultCfg({
-      allLayouts: [
-        '/',
-        'layout2'
-      ]
+      retainPageInPush: false,
     });
   })
   // app.
@@ -31,14 +28,15 @@ bpui
 
     const App = modules[0].default;
     const routers: any[] = modules[1].default;
-    routers.push({ path: '*', component: () => import('./pages/default/404.vue') });
 
-    //
-    // 注册应用.
+    // 404 使用nginx指向 /404.html 页面.
+    // routers.push({ path: '*', component: () => import('./pages/default/404.vue') });
+    routers.push({ path: '404.html', component: () => import('./pages/default/404.vue') });
+
+    // register app.
     bpui.registerApp({ routePath: routers, basePath: '/' });
     
-    //
-    // 创建实例.
+    // create instance.
     new Vue({
       render: h => h(App)
     }).$mount("#app");

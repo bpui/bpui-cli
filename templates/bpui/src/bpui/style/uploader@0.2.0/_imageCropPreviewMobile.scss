@@ -1,0 +1,109 @@
+
+.bp-uploader-image-crop-preview__mobile {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bpUploaderCropPreviewBgMobile;
+
+    .bp-uploader-image-crop-preview__cancel, .bp-uploader-image-crop-preview__ok {
+        position: absolute;
+        top: 10px;
+    }
+
+    .bp-uploader-image-crop-preview__cancel {
+        color: #fff;
+        &:hover {
+            color: rgba(#fff, .7);
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        &:after {
+            content: '取消';
+        }
+    }
+    .bp-uploader-image-crop-preview__ok {
+        @extend .bp-btnSolid;
+        @extend .bp-btnPrimary;
+        &:after {
+            content: '确认';
+        }
+    }
+
+    .bp-uploader-image-crop-preview__ok {
+        right: 10px;
+    }
+    .bp-uploader-image-crop-preview__cancel {
+        left: 10px;
+    }
+
+    canvas {
+        border: $bpUploaderCropPreviewImageBorder;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .bp-uploader-image-crop-preview__cliprect {
+        cursor: move;
+        border: $bpUploaderCropPreviewClipBorder;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+
+        .bp-uploader-image-crop-preview__cliprect__horn {
+            $cliprect__horn_size: 20px; 
+            width: $cliprect__horn_size;
+            height: $cliprect__horn_size;
+            overflow: hidden;
+            border-radius: $cliprect__horn_size / 2;
+            background-color: $bpUploaderCropPreviewClipHornColor;
+            opacity: 0.7;
+            display: block;
+            cursor: pointer;
+            position: absolute;
+
+            &[data-direction=n] {
+                cursor: n-resize;
+                top: - $cliprect__horn_size / 2;
+                left: 50%;
+                bottom: initial;
+                right: initial;
+                margin-left: - $cliprect__horn_size / 2;
+            }
+            &[data-direction=s] {
+                cursor: s-resize;
+                top: initial;
+                left: 50%;
+                bottom: - $cliprect__horn_size / 2;
+                right: initial;
+                margin-left: - $cliprect__horn_size / 2;
+            }
+            &[data-direction=w] {
+                cursor: w-resize;
+                top: 50%;
+                left: - $cliprect__horn_size / 2;
+                bottom: initial;
+                right: initial;
+                margin-top: - $cliprect__horn_size / 2;
+            }
+            &[data-direction=e] {
+                cursor: e-resize;
+                top: 50%;
+                left: initial;
+                bottom: initial;
+                right: - $cliprect__horn_size / 2;
+                margin-top: - $cliprect__horn_size / 2;
+            }
+        }
+    }
+}

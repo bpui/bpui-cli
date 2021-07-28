@@ -28,5 +28,7 @@ npm run build:analyzer  # for the production environment
 ## Build a layout
 
 ```bash
+
+# linux shell.
 BP_LAYOUT=xxx npm run build # it will to build layout 'xxx'
 ```

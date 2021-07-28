@@ -1,0 +1,34 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-13 15:45
+* Desc: 
+*/
+
+$bpUploaderFontSize: 13px !default;
+
+/* 尺寸 */
+$bpUploaderWidth: 200px !default;
+$bpUploaderHeight: 200px !default;
+
+/* 边框 */
+$bpUploaderBorder: #eee dashed 1px !default;
+$bpUploaderBorderDrag: $bpColorPrimary dashed 1px !default;
+$bpUploaderBorderRadius: 6px !default;
+
+/* 进度 */
+$bpUploaderProgressColor: $bpColorPrimary !default;
+$bpUploaderProgressHeight: 3px !default;
+
+$bpUploaderDragText: '将文件拖到此处, 或点击上传' !default;
+$bpUploaderCancelText: '点击取消' !default;
+
+/* 图片 crop 预览 */
+$bpUploaderCropPreviewBg: rgba(0,0,0,0.8) !default;
+$bpUploaderCropPreviewBtnColor: #a9a9b2 !default;
+$bpUploaderCropPreviewImageBorder: solid #404040 1px !default;
+$bpUploaderCropPreviewClipBorder: $bpColorPrimary dotted 2px !default;
+$bpUploaderCropPreviewClipHornColor: $bpColorPrimary !default;
+
+/* 图片 crop 预览 (移动端) */
+$bpUploaderCropPreviewBgMobile: rgba(0,0,0,1) !default;

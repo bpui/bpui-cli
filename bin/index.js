@@ -42,24 +42,24 @@ function checkoutVersion(cbFinish) {
     
     if (febs.string.trim(stdout) != '"' + febs.string.trim(pack.version) + '"') {
       console.log('[New version available] To run: ' + chalk.green('npm i bpui-cli@latest -g') + ' in terminal');
-
-      if ('Y' == utils.question('[Warn] upgrade now? (Y/n)', (answer) => {
-        return answer == 'Y' || answer == 'n';
-      })) {
-        console.log("upgrading...")
-        febs.utils.execCommand("npm", ["i", "bpui-cli@latest", "-g"], (err, stdout, stderr) => {
-          if (err) {
-            console.error(stderr);
-          }
-          else {
-            console.log(stdout);
-          }
-          process.exit(0);
-        });
-      }
-      else {
-        cbFinish();
-      }
+      process.exit(0);
+      // if ('Y' == utils.question('[Warn] upgrade now? (Y/n)', (answer) => {
+      //   return answer == 'Y' || answer == 'n';
+      // })) {
+      //   console.log("upgrading...")
+      //   febs.utils.execCommand("npm", ["i", "bpui-cli@latest", "-g"], (err, stdout, stderr) => {
+      //     if (err) {
+      //       console.error(stderr);
+      //     }
+      //     else {
+      //       console.log(stdout);
+      //     }
+      //     process.exit(0);
+      //   });
+      // }
+      // else {
+      //   cbFinish();
+      // }
     }
     else {
       cbFinish();

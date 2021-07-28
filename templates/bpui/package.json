@@ -22,7 +22,7 @@
     "@bpui/radio": "^0.2.0",
     "@bpui/switch": "^0.2.1",
     "@bpui/uploader": "^0.2.0",
-    "bpui.js": "^1.1.0",
+    "bpui.js": "^1.1.1",
     "core-js": "^3.6.4",
     "febs-browser": "^1.2.10",
     "register-service-worker": "^1.7.2",
@@ -33,7 +33,7 @@
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
-    "@bpui/build-cli": "^0.0.7",
+    "@bpui/build-cli": "^0.0.9",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.4.0",

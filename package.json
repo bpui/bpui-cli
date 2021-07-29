@@ -60,5 +60,5 @@
     "postinstall": "node ./postinstall"
   },
   "name": "bpui-cli",
-  "version": "0.0.10"
+  "version": "0.0.11"
 }

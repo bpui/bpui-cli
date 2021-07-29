@@ -1,0 +1,85 @@
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-28 17:01
+* Desc: 
+*/
+
+.bp-popover {
+    /* 主内容 */
+    .bp-popover__main {
+        padding-left: 0;
+        padding-right: 0;
+
+        .bp-popover__cell {
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
+            min-width: 80px;
+            cursor: pointer;
+
+            &:hover,&:active {
+                color: darken($color: $bpPopoverTextColor, $amount: 15%);
+            }
+
+            @include bp-thinBorderBottom($bpPopoverCellBorderColor);
+
+            &:nth-last-child(2) {
+                @include bp-thinBorderBottom(rgba(0, 0, 0, 0));
+            }
+        }
+
+        .bp-popover__cellWarn {
+            @extend .bp-popover__cell;
+
+            &:hover,&:active {
+                color: darken($color: $bpColorWarn, $amount: 15%);
+            }
+
+            color: $bpColorWarn;
+        }
+    }
+
+    /* 按行显示 */
+    &.bp-popover__row {
+        white-space: nowrap;
+
+        .bp-popover__main {
+            padding: 0;
+            max-width: 90vw;
+            overflow-x: auto;
+
+            .bp-popover__cell {
+                display: inline-block;
+
+                &:hover,&:active {
+                    color: darken($color: $bpPopoverTextColor, $amount: 15%);
+                }
+
+                @include bp-thinBorderRight($bpPopoverCellBorderColor);
+
+                &:nth-last-child(2) {
+                    @include bp-thinBorderRight(rgba(0, 0, 0, 0));
+                }
+            }
+
+            .bp-popover__cellWarn {
+                display: inline-block;
+
+                &:hover,&:active {
+                    color: darken($color: $bpColorWarn, $amount: 15%);
+                }
+
+                color: $bpColorWarn;
+
+                @include bp-thinBorderRight($bpPopoverCellBorderColor);
+
+                &:nth-last-child(2) {
+                    @include bp-thinBorderRight(rgba(0, 0, 0, 0));
+                }
+            }
+        }
+    }
+}

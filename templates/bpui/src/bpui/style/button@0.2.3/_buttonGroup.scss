@@ -1,0 +1,37 @@
+
+/**
+* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Author: lipengxiang
+* Date: 2020-02-24 11:03
+* Desc: 
+*/
+
+.bp-btnGroup {
+  margin: 2px;
+  display: inline-block;
+  border-radius: $bpButtonBorderRadius;
+  border: 1px solid $bpButtonGroupBorderColor;
+
+  & > .bp-btn, button {
+    height: 38px;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    min-width: 80px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    
+    &:hover {
+      border-radius: 0;
+      border: none;
+      margin: 0;  
+    }
+    &:not(:first-child) {
+      border-left: 1px solid $bpButtonGroupBorderColor;
+      &:hover {
+        border-left: 1px solid $bpButtonGroupBorderColor;
+      }
+    }
+  }
+}

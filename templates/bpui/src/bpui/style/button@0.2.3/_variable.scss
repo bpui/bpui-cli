@@ -5,6 +5,9 @@
 * Desc: 
 */
 
+/* 按钮组边框色 */
+$bpButtonGroupBorderColor: $bpColorPrimary;
+
 /* 字体 */
 $bpButtonFontSize: 1rem !default;
 $bpButtonFontWeight: 400 !default;
@@ -17,7 +20,7 @@ $bpButtonColor: (
   /* .bp-btnWarning */
   Warning: $bpColorWarn,
   /* .bp-btnInfo */
-  Info: $bpTextColorSecondary,
+  Info: lighten($bpTextColorSecondary, 30%),
   /* custom */
 ) !default;
 
@@ -35,11 +38,11 @@ $bpButtonSolidBgColor: (
 /** 实心按钮边框色 */
 $bpButtonSolidBorderColor: (
   /* .bp-btnPrimary */
-  Primary: $bpColorPrimary,
+  Primary: darken($bpColorPrimary, 5%),
   /* .bp-btnWarning */
-  Warning: $bpColorWarn,
+  Warning: darken($bpColorWarn, 5%),
   /* .bp-btnInfo */
-  Info: $bpColorPrimary,
+  Info: darken($bpBgColor, 5%),
   /* custom */
 ) !default;
 

@@ -17,27 +17,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/bpui/bpui-cli.git"
   },
-  "keywords": [
-    "java",
-    "spring",
-    "springboot",
-    "annotation",
-    "validation",
-    "controller",
-    "service",
-    "feign",
-    "feignClient",
-    "PathVariable",
-    "RequestBody",
-    "RequestMapping",
-    "postmapping",
-    "getmapping",
-    "RequestParam",
-    "restcontroller",
-    "request",
-    "service",
-    "autowired"
-  ],
+  "keywords": [],
   "files": [
     "_scripts",
     "bin",
@@ -60,5 +40,5 @@
     "postinstall": "node ./postinstall"
   },
   "name": "bpui-cli",
-  "version": "0.0.13"
+  "version": "0.0.14"
 }

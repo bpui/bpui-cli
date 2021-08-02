@@ -25,6 +25,16 @@
         cursor: pointer;
         flex-grow: 0;
     }
+    .bp-input__prefixLabel {
+        text-align: right;
+        width: $bpInputAdditionLabelWidth;
+        color: $bpInputAdditionLabelColor;
+    }
+    .bp-input__suffixLabel {
+        text-align: left;
+        width: $bpInputAdditionLabelWidth;
+        color: $bpInputAdditionLabelColor;
+    }
 
     input {
         -webkit-writing-mode: horizontal-tb !important;

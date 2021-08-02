@@ -6,15 +6,30 @@ var febs = require('febs');
 var List = require('term-list');
 var path = require('path');
 var init = require('./init');
+var update = require('./update');
 var version = require('./version');
 var pack = require('../package.json');
 var utils = require('./utils');
 var chalk = require('chalk');
 var fs = require('fs');
 
+function utils_fill_length(str, n) {
+  var str_arr = str.split('');
+  if (str_arr.length < n) {
+    var nn = str_arr.length;
+    str_arr.length = n;
+    str_arr.fill(' ', nn);
+    return str_arr.join('');
+  }
+  else {
+    return str + ' ';
+  }
+}
+
 var commands = {
-  'version': [version, 'Version'],
-  'init': [init, 'Initial project'],
+  'version': [version, 'version', 'print version'],
+  'init': [init, 'init', 'initial a empty project'],
+  'update': [update, 'update [component]', 'update the component'],
 }
 
 var LASTUPDATE_STEP = 1000 * 60 * 60 * 10;
@@ -100,11 +115,14 @@ function run() {
 
 function printUsage() {
   console.log([
-    'Usage: bpui <command>',
+    'Usage:',
     '',
-    'Commands:'
+    '        bpui <command> [arguments]',
+    '',
+    'The Commands are:',
+    '',
   ].concat(Object.keys(commands).map(function(name) {
-    return '  - ' + name + ': ' + commands[name][1];
+    return '        ' + utils_fill_length(commands[name][1], 20) + ': ' + commands[name][2];
   })).join('\n'));
   process.exit(1);
 }

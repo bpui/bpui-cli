@@ -3,6 +3,7 @@
 var path = require("path");
 var fs = require('fs');
 var febs = require("febs");
+var chalk = require('chalk');
 
 
 // for (const key in componentEnum.ComponentName) {
@@ -90,8 +91,10 @@ function done(args, workDir) {
       components2[i] = components2[i] + '@' + pkgver;
     }
   }
+
+  console.log('update component: ' + chalk.blue(components.toString()));
   
-  febs.utils.execCommand("npm", [
+  febs.utils.execCommand((process.platform === 'win32'? 'npm.cmd': 'npm'), [
     "i",
     ...components2,
     '--save'
@@ -107,57 +110,62 @@ function done(args, workDir) {
 
       if (!stderr && !stdout) {
 
+        var pros = [];
         var vers = [];
-        for (var i = 0; i < components.length; i++) {
+        for (var component of components) {
           var p = path.join(
             workDir,
             "node_modules",
             "bpui.js",
             "node_modules",
             "@bpui",
-            components[i],
+            component,
             "style"
           );
-          if (!file.dirIsExist(p)) {
-            p = path.join(workDir, "node_modules", "@bpui", components[i], "style");
+          if (!febs.file.dirIsExist(p)) {
+            p = path.join(workDir, "node_modules", "@bpui", component, "style");
           }
 
-          var comm_pkg = require(path.join(workDir, "node_modules", "@bpui", components[i], "package.json"));
+          var comm_pkg = require(path.join(workDir, "node_modules", "@bpui", component, "package.json"));
           vers.push(comm_pkg.version);
 
-          console.log(`  copy ${components[i] + '@' + comm_pkg.version} style`);
+          console.log(`  copy ${chalk.blue(component + '@' + comm_pkg.version)} style`);
 
-          if (file.dirIsExist(p) && !file.dirIsExist(path.join(destDir, components[i] + '@' + comm_pkg.version))) {
-            let comm = components[i] + '@' + comm_pkg.version;
-            file.dirCopy(p, path.join(destDir, comm), function () {
-              if (file.fileIsExist(path.join(destDir, comm, "unpkg.scss"))) {
-                file.fileRemove(path.join(destDir, comm, "unpkg.scss"));
-              }
-              if (file.fileIsExist(path.join(destDir, comm, "unpkg_class.scss"))) {
-                file.fileRemove(path.join(destDir, comm, "unpkg_class.scss"));
-              }
-            });
+          if (febs.file.dirIsExist(p) && !febs.file.dirIsExist(path.join(destDir, component + '@' + comm_pkg.version))) {
+            let comm = component + '@' + comm_pkg.version;
+            pros.push(febs.file.dirCopyAsync(p, path.join(destDir, comm))
+              .then(() => {
+                if (febs.file.fileIsExist(path.join(destDir, comm, "unpkg.scss"))) {
+                  febs.file.fileRemove(path.join(destDir, comm, "unpkg.scss"));
+                }
+                if (febs.file.fileIsExist(path.join(destDir, comm, "unpkg_class.scss"))) {
+                  febs.file.fileRemove(path.join(destDir, comm, "unpkg_class.scss"));
+                }
+              }));
           } // if.
         }
 
-        var fcontent = fs.readFileSync(path.join(__dirname, "_index.scss"), { 'encoding': 'utf-8' });
-        for (var i = 0; i < components.length; i++) {
-          fcontent = fcontent.replace(
-            new RegExp(`@import\\s+(\\'||\\")\\./${components[i]}@(\\d|\\.)+(\\'||\\")`),
-            './' + components[i] + '@' + vers[i]);
-        }
-        fs.writeFileSync(path.join(destDir, "_index.scss"), fcontent, { flag: 'w', encoding: 'utf8' });
+        Promise.all(pros)
+          .then(() => {
+            var fcontent = fs.readFileSync(path.join(destDir, "_index.scss"), { 'encoding': 'utf-8' });
+            for (var i = 0; i < components.length; i++) {
+              fcontent = fcontent.replace(
+                new RegExp(`@import\\s+(\\'||\\")\\./${components[i]}@(\\d|\\.)+(\\'||\\")`),
+                '@import \'./' + components[i] + '@' + vers[i] + '\'');
+            }
+            fs.writeFileSync(path.join(destDir, "_index.scss"), fcontent, { flag: 'w', encoding: 'utf8' });
 
-        console.log("");
-        console.log("");
-        console.log("**************************************************************");
-        console.log("> Success: Copy all components styles to `src/bpui/style`     ");
-        console.log(">    import 'src/bpui/style'");
-        console.log("**************************************************************");
-        console.log("");
-        console.log("> Can run 'bpui update' to upate component.");
-        console.log("");
-        console.log("");
+            console.log("");
+            console.log("");
+            console.log("**************************************************************");
+            console.log("> Success: Copy all components styles to `src/bpui/style`     ");
+            console.log(">    import 'src/bpui/style'");
+            console.log("**************************************************************");
+            console.log("");
+            console.log("> Can run 'bpui update' to upate component.");
+            console.log("");
+            console.log("");
+          });
       }
     }
   );

@@ -1,0 +1,59 @@
+.bp-tableView .bp-tableView__cells .bp-tableView__cell.bp-tableView__cell_swiped {
+    &[platform=ios] {
+        padding: 0;
+
+        & > .bp-tableView__cell_head {
+            position: relative;
+            background-color: #fff;
+            flex: 1;
+
+            .bp-tableView__cell {
+                &:before, &:last-child:after {
+                    content: none;
+                }
+            }
+        }
+
+        & > .bp-tableView__cell_foot {
+            .bp-tableView__cell__editor {
+                max-width: 90vw;
+                margin-right: 0px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                display: flex;
+
+                &:last-of-type {
+                    padding-right: 0px;
+                }
+
+                & > * {
+                    display: inline-block;
+                    height: 100%;
+                    box-sizing: border-box;
+                    margin: 0;
+                    border-radius: 0;
+                    text-decoration: none;
+                    padding: 10px 1em;
+                    font-size: 14px;
+
+                    &[type=warn] {
+                        background-color: #ff3b30;
+                        color: #fff;
+                    }
+
+                    &[type=info1] {
+                        background-color: #F29C48;
+                        color: #fff;
+                    }
+
+                    &[type=info2] {
+                        background-color: #4C4C4C;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

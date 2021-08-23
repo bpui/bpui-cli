@@ -1,0 +1,203 @@
+.bp-tableView__animation {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.bp-tableView__animation-fast {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.bp-tableView .bp-tableView__cells {
+    box-sizing: border-box;
+    display: block;
+    font-size: $bpTableViewCellFontSize;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: start;
+    text-size-adjust: 100%;
+    word-spacing: 1px;
+    backface-visibility: visible;
+
+    &:before, &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        border-top: 1px solid $bpTableViewCellBorderColor;
+        color: $bpTableViewCellBorderColor;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+        z-index: 2;
+    }
+
+    &:after {
+        top: initial;
+        bottom: 0px;
+        border-top: none;
+        border-bottom: 1px solid $bpTableViewCellBorderColor;
+        transform-origin: 0 2px;
+    }
+
+    .bp-tableView__cell {
+        &.bp-tableView__cell_disabled {
+            opacity: 0.5;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            touch-action: none;
+            pointer-events: none;
+        }
+
+        .bp-tableView__cell_next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            bottom: 0;
+            .bp-icon {
+                height: $bpTableViewCellNextArrowSize;
+                width: $bpTableViewCellNextArrowSize;
+                font-size: $bpTableViewCellNextArrowSize;
+                color: $bpTableViewCellNextArrowColor;
+            }
+        }
+
+        align-items: center;
+        background-color: $bpTableViewCellBgColor;
+        box-sizing: border-box;
+        color: $bpTableViewCellFontColor;
+        display: flex;
+        height: $bpTableViewCellHeight;
+        padding-left: 15px;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: visible;
+        position: relative;
+        text-align: start;
+        text-size-adjust: 100%;
+        user-select: none;
+        word-spacing: 1px;
+
+        &:hover, &[data-touch=touch] {
+            background-color: darken($bpTableViewCellBgColor, 3%);
+        }
+        &[data-touch=end] {
+            background-color: $bpTableViewCellBgColor;
+        }
+        
+        div {
+            &:first-child {
+                margin-left: 0px;
+            }
+
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+
+        .bp-tableView__cell__center:after, .bp-tableView__cell__right:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            right: 0;
+            left: 0;
+            height: 1px;
+            border-bottom: 1px solid $bpTableViewCellBorderColor;
+            color: $bpTableViewCellBorderColor;
+            transform-origin: 0 0;
+            transform: scaleY(0.5);
+            z-index: 2;
+        }
+
+        &:last-child {
+            .bp-tableView__cell__center:after, .bp-tableView__cell__right:after {
+                content: none;
+            }
+        }
+
+        .bp-tableView__cell_head .bp-tableView__cell__center:after,
+        .bp-tableView__cell_head .bp-tableView__cell__right:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            right: 0;
+            left: 0;
+            height: 1px;
+            border-bottom: 1px solid $bpTableViewCellBorderColor;
+            color: $bpTableViewCellBorderColor;
+            transform-origin: 0 0;
+            transform: scaleY(0.5);
+            z-index: 2;
+        }
+
+        &:last-child {
+            .bp-tableView__cell_head .bp-tableView__cell__center:after,
+            .bp-tableView__cell_head .bp-tableView__cell__right:after {
+                content: none;
+            }
+        }
+
+        .bp-switch, .bp-radio, .bp-checkbox, button, .bp-btn {
+            margin: 0;
+            float: right;
+        }
+        label {
+            justify-content: right;
+            align-items: center;
+            display: flex;
+        }
+
+        .bp-tableView__cell__center {
+            // touch-action: none;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            position: relative;
+        }
+
+        .bp-tableView__cell__right {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            // touch-action: none;
+            position: relative;
+            text-align: right;
+            color: $bpTableViewCellRightFontColor;
+            padding-right: 30px;
+        }
+
+        .bp-tableView__cell__left {
+            height: 100%;
+            // touch-action: none;
+            svg {
+                vertical-align: middle;
+            }
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            vertical-align: middle;
+            width: 30px;
+            height: 30px;
+
+            .bp-icon {
+                height: 25px;
+                width: 25px;
+                font-size: 25px;
+            }
+        }
+    }
+}

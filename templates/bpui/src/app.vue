@@ -35,6 +35,6 @@ export default class extends Vue {
 
 
 <style lang="scss">
-@import 'bpui.js/style';
+@import '~@/bpui/style';
 
 </style>

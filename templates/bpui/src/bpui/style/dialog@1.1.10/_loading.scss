@@ -47,3 +47,29 @@
     padding: 0px 20px 10px 20px;
   }
 }
+
+
+/**
+  * 显示在具体target上的loading.
+  */
+.bp-widget.bp-loading.bp-loadingTargetClass {
+  position: absolute;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+  background: $bpLoadingTargetBgColor;
+
+  .bp-widget__content {
+    width: auto;
+    height: auto;
+    min-height: initial;
+    max-width: initial;
+    min-width: initial;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0);
+  }
+}

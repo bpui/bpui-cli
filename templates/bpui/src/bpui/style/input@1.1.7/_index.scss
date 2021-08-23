@@ -26,14 +26,22 @@
         flex-grow: 0;
     }
     .bp-input__prefixLabel {
-        text-align: right;
+        text-align: center;
         width: $bpInputAdditionLabelWidth;
         color: $bpInputAdditionLabelColor;
+        font-size: 10px;
+        flex-shrink: 0;
+        padding-left: 4px;
+        box-sizing: border-box;
     }
     .bp-input__suffixLabel {
-        text-align: left;
+        text-align: center;
         width: $bpInputAdditionLabelWidth;
         color: $bpInputAdditionLabelColor;
+        font-size: 10px;
+        flex-shrink: 0;
+        padding-right: 4px;
+        box-sizing: border-box;
     }
 
     input {
@@ -54,6 +62,7 @@
         font-size: $bpInputFontSize;
         font-weight: $bpInputFontWeight;
         padding: 1px;
+        width: 100%;
     }
 
     .bp-input__inner {
@@ -72,7 +81,7 @@
         padding: 0 15px;
         transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
         flex-grow: 1;
-        width: auto;
+        width: 100%;
 
         &:focus {
             outline: none;
@@ -98,6 +107,38 @@
         }
     }
 
+    .bp-input_clearIcon {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #b7b7b7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            box-sizing: content-box;
+
+            i {
+                height: 14px;
+                width: 14px;
+                font-size: 14px;
+                color: #F3F3F4;
+                transform-origin: center;
+                transform: scale(0.5);
+            }
+
+        }
+    }
+
     &.bp-input__textarea {
         padding-right: initial;
         background: transparent;
@@ -105,6 +146,10 @@
         display: flex;
         align-items: center;
         vertical-align: bottom;
+
+        .bp-input_clearIcon { 
+            align-self: flex-start;
+        }
         
         .bp-input__inner {
             display: block;

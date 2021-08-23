@@ -11,6 +11,11 @@
         padding-left: 0;
         padding-right: 0;
 
+        & > span {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
         .bp-popover__cell {
             text-align: center;
             padding-top: 12px;
@@ -50,6 +55,11 @@
             padding: 0;
             max-width: 90vw;
             overflow-x: auto;
+
+            & > span {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
 
             .bp-popover__cell {
                 display: inline-block;

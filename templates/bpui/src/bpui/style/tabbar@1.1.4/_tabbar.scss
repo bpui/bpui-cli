@@ -3,9 +3,9 @@
     &.bp-tabbar-visible {
         opacity: 1 !important;
         visibility: visible !important;
-        -webkit-transition: opacity 0.3s 0s, visibility 0s 0s !important;
-        -moz-transition: opacity 0.3s 0s, visibility 0s 0s !important;
-        transition: opacity 0.3s 0s, visibility 0s 0s !important;
+        -webkit-transition: opacity 0.3s 0s, visibility 0s 0s, height 0.1s 0s, padding-bottom 0.1s 0s, padding-left 0.1s 0s, padding-right 0.1s 0s !important;
+        -moz-transition: opacity 0.3s 0s, visibility 0s 0s, height 0.1s 0s, padding-bottom 0.1s 0s, padding-left 0.1s 0s, padding-right 0.1s 0s !important;
+        transition: opacity 0.3s 0s, visibility 0s 0s, height 0.1s 0s, padding-bottom 0.1s 0s, padding-left 0.1s 0s, padding-right 0.1s 0s !important;
     }
 
     &.bp-tabbar-invisible {
@@ -13,12 +13,12 @@
         pointer-events: none;
         opacity: 0 !important;
         visibility: hidden !important;
-        -webkit-transition: opacity 0.3s 0s, visibility 0s 0s !important;
-        -moz-transition: opacity 0.3s 0s, visibility 0s 0s !important;
-        transition: opacity 0.3s 0s, visibility 0s 0s !important;
+        -webkit-transition: opacity 0.3s 0s, visibility 0s 0s, height 0.1s 0s, padding-bottom 0.1s 0s, padding-left 0.1s 0s, padding-right 0.1s 0s !important;
+        -moz-transition: opacity 0.3s 0s, visibility 0s 0s, height 0.1s 0s, padding-bottom 0.1s 0s, padding-left 0.1s 0s, padding-right 0.1s 0s !important;
+        transition: opacity 0.3s 0s, visibility 0s 0s, height 0.1s 0s, padding-bottom 0.1s 0s, padding-left 0.1s 0s, padding-right 0.1s 0s !important;
     }
 
-    /* animation to visible or hide */
+    /* animation to visible or hide for children elements. */
     .bp-tabbar__visible {
         opacity: 1 !important;
         visibility: visible !important;

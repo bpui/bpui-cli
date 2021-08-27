@@ -7,6 +7,7 @@ var List = require('term-list');
 var path = require('path');
 var init = require('./init');
 var update = require('./update');
+var copyStyle = require('./copy_style');
 var version = require('./version');
 var pack = require('../package.json');
 var utils = require('./utils');
@@ -30,6 +31,7 @@ var commands = {
   'version': [version, 'version', 'print version'],
   'init': [init, 'init', 'initial a empty project'],
   'update': [update, 'update [component]', 'update the component'],
+  'copyStyle': [copyStyle, 'copyStyle', 'copy the component style'],
 }
 
 var LASTUPDATE_STEP = 1000 * 60 * 60 * 10;

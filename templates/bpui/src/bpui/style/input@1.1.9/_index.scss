@@ -102,9 +102,7 @@
             right: 5px;
             top: 8.5px;
         }
-        &.bp-input__focus {
-            border-color: $bpInputTextWarnColor;
-        }
+        border-color: $bpInputTextWarnColor;
     }
 
     .bp-input_clearIcon {

@@ -31,7 +31,7 @@ var commands = {
   'version': [version, 'version', 'print version'],
   'init': [init, 'init', 'initial a empty project'],
   'update': [update, 'update [component]', 'update the component'],
-  'copyStyle': [copyStyle, 'copyStyle', 'copy the component style'],
+  'copyStyle': [copyStyle, 'copyStyle [component]', 'copy the component style'],
 }
 
 var LASTUPDATE_STEP = 1000 * 60 * 60 * 10;

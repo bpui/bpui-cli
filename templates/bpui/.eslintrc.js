@@ -19,7 +19,7 @@ module.exports = {
     // allow paren-less arrow functions
     "arrow-parens": 0,
     // "comma-dangle": [2, "never"], // 对象、数组最后一个元素不能有逗号
-    "arrow-spacing": 2, // 箭头函数前后有空格
+    "arrow-spacing": 0,
     "brace-style": 0,
     "camelcase": 0,
     "curly": 0,
@@ -47,7 +47,7 @@ module.exports = {
     "space-before-function-paren": 0, // 函数参数前后有空格
     "space-before-blocks": 2, // 代码块空格
     "space-infix-ops": [2, { int32Hint: false }], // 操作符前后加空格
-    "spaced-comment": 2,
+    "spaced-comment": 0,
     "standard/object-curly-even-spacing": 0,
     "yoda": 0,
     "vue/no-parsing-error": ["off"],

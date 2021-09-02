@@ -63,6 +63,7 @@
     }
     mounted() {
       console.log('mounted: index');
+      this.$timer.setTimeout(()=>console.log(111), 10000);
     }
 
     beforeDestroy() {

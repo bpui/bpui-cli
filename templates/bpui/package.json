@@ -10,8 +10,8 @@
     "dev": "bpui-build router && vue-cli-service serve"
   },
   "dependencies": {
-    "bpui.js": "~1.1.9",
-    "bpui.js.bundle": "~1.1.9",
+    "bpui.js": "~1.1.10",
+    "bpui.js.bundle": "~1.1.10",
     "core-js": "^3.6.4",
     "febs-browser": "^1.2.10",
     "register-service-worker": "^1.7.2",
